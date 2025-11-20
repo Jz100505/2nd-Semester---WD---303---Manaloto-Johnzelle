@@ -1,0 +1,17 @@
+/* ----------------------------- */
+/* Footer Styles */
+.cv-footer {
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #6b5b4c;
+  border-top: 2px solid #e2d6c8;
+  animation: fadeIn 1s ease;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
