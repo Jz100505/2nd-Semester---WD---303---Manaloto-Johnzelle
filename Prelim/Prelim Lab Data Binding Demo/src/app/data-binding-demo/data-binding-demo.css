@@ -1,0 +1,116 @@
+/*
+ * Styles for the Data Binding Demo Component
+ * Adopts the color palette and design elements of the CV components
+ */
+
+/* Container styling for the whole component */
+:host {
+  display: block; /* Allows block-level properties like margin and width */
+  max-width: 600px;
+  margin: 40px auto; /* Centers the component below the CV */
+  padding: 30px;
+  background: #fffaf6; /* Light background, similar to the main wrapper */
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-top: 4px solid #b37a44; /* Theme color accent */
+  animation: fadeIn 1.5s ease;
+}
+
+/* Primary Title (e.g., `{{ message }}`) */
+h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #4a372a; /* Dark theme color, similar to section titles */
+  margin-bottom: 10px;
+  border-bottom: 1px dashed #e2d6c8;
+  padding-bottom: 5px;
+}
+
+/* Secondary Title (e.g., `{{ description }}`) */
+h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #5b4636; /* Medium theme color */
+  margin-bottom: 15px;
+}
+
+/* Paragraphs and general text */
+p {
+  font-size: 1rem;
+  color: #5b4636;
+  line-height: 1.6;
+  margin-top: 5px;
+}
+
+/* Horizontal rule divider */
+hr {
+  border: none;
+  height: 1px;
+  background: #e2d6c8;
+  margin: 20px 0;
+}
+
+/* Image Styling */
+img {
+  display: block;
+  margin: 10px 0;
+  border: 2px solid #cfa77c;
+  border-radius: 4px;
+  padding: 3px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Input Styling (for Two-Way Binding) */
+input {
+  width: 100%;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border: 1px solid #cfa77c;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #4a372a;
+  background-color: #f7efe9; /* Light background from .tech-category */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+  outline: none;
+  border-color: #b37a44;
+  box-shadow: 0 0 5px rgba(179, 122, 68, 0.3);
+}
+
+/* Button Styling (for Event Binding) */
+button {
+  background-color: #b37a44; /* Theme accent color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+}
+
+button:hover {
+  background-color: #8d5a2c; /* Darker hover color */
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+/* Existing highlighted class for Class Binding */
+.highlighted {
+  background: #ffecb3; /* A softer, theme-appropriate yellow */
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+/* Simple fade-in animation for the demo */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
