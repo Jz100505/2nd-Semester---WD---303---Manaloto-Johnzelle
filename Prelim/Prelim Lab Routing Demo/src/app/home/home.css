@@ -1,0 +1,51 @@
+.landing-page {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f4f4f9;
+  min-height: 80vh; /* A simple way to fill most of the screen height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+  font-size: 2.5em;
+}
+
+main p {
+  color: #7f8c8d;
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.navigation-links {
+  margin-top: 30px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #3498db;
+  color: white;
+  padding: 12px 25px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  margin: 0 15px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cta-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-2px);
+}
+
+footer {
+  margin-top: auto; /* Pushes the footer to the bottom of the flex container */
+  padding-top: 20px;
+  border-top: 1px solid #ecf0f1;
+  color: #bdc3c7;
+  font-size: 0.9em;
+}
