@@ -1,0 +1,147 @@
+<div class="content-container">
+  <nav class="page-nav">
+    <a routerLink="/">Home</a>
+    <a routerLink="/data-binding">Data Binding Demo</a>
+  </nav>
+
+  <p class="component-intro">Structural Directives Demo: *ngIf, &#64;if, &#64;for, and [(ngModel)]</p>
+
+  <section class="section-card">
+    <h2>1. Static Note using *ngIf / else (isStaticNoteVisible)</h2>
+    <table>
+      <tr>
+        <td *ngIf="isStaticNoteVisible; else staticNoteFalse">
+          <h2>This is a static note with true value!</h2>
+        </td>
+      </tr>
+    </table>
+
+    <ng-template #staticNoteFalse>
+      <tr>
+        <td>
+          <h2>This static note has false value.</h2>
+        </td>
+      </tr>
+    </ng-template>
+  </section>
+
+  <section class="section-card">
+    <h2>2. Dynamic Note with Event Handlers (isNoteVisible)</h2>
+    <table>
+      <tr>
+        <td>
+          <p *ngIf="isNoteVisible">This is a note!</p>
+        </td>
+        <td>
+          <button (click)="showNote()">Show Note</button>
+        </td>
+        <td>
+          <button (click)="hideNote()">Hide Note</button>
+        </td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="section-card">
+    <h2>3. Toggle Content and Button Label (isParagraphVisible)</h2>
+    <table>
+      <tr>
+        <td>
+          <button (click)="toggleNote()">
+            {{ isParagraphVisible ? 'Hide' : 'Show' }}
+          </button>
+        </td>
+        <td>
+          <p *ngIf="isParagraphVisible">This is the paragraph content.</p>
+        </td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="section-card">
+    <h2>4. Static Month Display using &#64;if (monthNameStatic: '{{ monthNameStatic }}')</h2>
+    <table>
+      <tr>
+        <td>
+          @if (monthNameStatic == 'Jan') {
+            <p>January</p>
+          } @else if (monthNameStatic == 'Feb') {
+            <p>February</p>
+          } @else if (monthNameStatic == 'Mar') {
+            <p>March</p>
+          }
+        </td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="section-card">
+    <h2>5. Dynamic Month Display using &#64;if and Two-Way Binding</h2>
+    <p>Try typing **Jan**, **Feb**, or **Mar** (case sensitive) in the box below:</p>
+    <table>
+      <tr>
+        <td>
+          @if (monthNameDynamic == 'Jan') {
+            <p>January</p>
+          } @else if (monthNameDynamic == 'Feb') {
+            <p>February</p>
+          } @else if (monthNameDynamic == 'Mar') {
+            <p>March</p>
+          } @else {
+            <p style="color: red;">Wrong Input</p>
+          }
+        </td>
+        <td>
+          <input type="text" [(ngModel)]="monthNameDynamic" placeholder="e.g. Mar" />
+        </td>
+      </tr>
+    </table>
+    <p>Current Dynamic Value: **{{ monthNameDynamic }}**</p>
+  </section>
+
+  <section class="section-card">
+    <h2>6. Simple List Display using &#64;for</h2>
+    <table>
+      <tr>
+        <td>
+          <ul class="styled-list">
+            @for (item of cityList; track $index) {
+              <li>{{item}}</li>
+            }
+          </ul>
+        </td>
+      </tr>
+    </table>
+  </section>
+
+  <section class="section-card">
+    <h2>7. Looping with Conditional Display (&#64;for + &#64;if)</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Student No.</th>
+          <th>Name</th>
+          <th>Course</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of studentList; track $index) {
+          <tr>
+            <td>{{$index + 1}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.course}}</td>
+            <td>
+              @if (item.isActive === true) {
+                <p class="active-status">Active</p>
+              } @else {
+                <p class="inactive-status">Inactive</p>
+              }
+            </td>
+          </tr>
+        }
+      </tbody>
+    </table>
+  </section>
+
+</div>

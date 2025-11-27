@@ -1,0 +1,127 @@
+/* src/app/directives/directives.css */
+/* Common styles (container, nav, section-card, button) reuse the pattern from data-binding.css */
+
+.content-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+/* Page Navigation Styling */
+.page-nav {
+  padding: 15px 0;
+  margin-bottom: 30px;
+  border-bottom: 2px solid var(--accent-color);
+  text-align: center;
+}
+
+.page-nav a {
+  margin: 0 20px;
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--primary-color);
+  padding: 8px 15px;
+  border-radius: 6px;
+  transition: all var(--transition-speed) ease;
+}
+
+.page-nav a:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-1px);
+}
+
+.component-intro {
+    font-size: 1.1em;
+    text-align: center;
+    color: var(--secondary-color);
+    margin-bottom: 40px;
+}
+
+/* Section Wrapper (The "Boxed Out" Look) - Reusing the card style */
+.section-card {
+  background-color: var(--card-background);
+  padding: 30px;
+  margin-bottom: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: box-shadow var(--transition-speed) ease;
+}
+
+.section-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.section-card h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  text-align: left;
+}
+
+th, td {
+  padding: 12px 15px;
+  border-bottom: 1px solid #dee2e6;
+  vertical-align: middle;
+}
+
+thead th {
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: 600;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f8f9fa; /* Light stripe */
+}
+
+tbody tr:hover {
+  background-color: var(--accent-color);
+  transition: background-color var(--transition-speed) ease;
+}
+
+/* List Styling */
+.styled-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.styled-list li {
+  background-color: var(--accent-color);
+  border-left: 5px solid var(--primary-color);
+  padding: 8px 15px;
+  margin-bottom: 8px;
+  border-radius: 4px;
+}
+
+/* Status Text Styling */
+.active-status {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+.inactive-status {
+  color: var(--secondary-color);
+}
+
+/* Input Styling (Used for Two-Way Binding demo) */
+input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    transition: border-color var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+input[type="text"]:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    outline: none;
+}

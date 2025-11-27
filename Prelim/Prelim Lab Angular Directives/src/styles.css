@@ -1,0 +1,44 @@
+/* src/styles.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+:root {
+  --primary-color: #007bff; /* Vibrant Blue */
+  --secondary-color: #6c757d; /* Gray for subtle text/borders */
+  --accent-color: #e6f2ff; /* Light Blue for backgrounds/hover */
+  --text-color: #343a40; /* Dark Text */
+  --background-color: #f8f9fa; /* Light Gray Background */
+  --card-background: #ffffff; /* White Card Background */
+  --transition-speed: 0.3s;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.6;
+}
+
+/* Global Nav Styling for App Component (app.html) */
+app-root > nav {
+  background-color: var(--card-background);
+  padding: 10px 40px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: flex-end;
+}
+
+app-root > nav a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 20px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: color var(--transition-speed), background-color var(--transition-speed);
+}
+
+app-root > nav a:hover {
+  color: var(--primary-color);
+  background-color: var(--accent-color);
+}

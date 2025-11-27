@@ -1,0 +1,34 @@
+<div class="content-container">
+  <nav class="page-nav">
+    <a routerLink="/">Home</a>
+    <a routerLink="/directives">Directives Demo</a>
+  </nav>
+
+  <p class="component-intro">data-binding works! Exploring One-Way and Two-Way Binding.</p>
+
+  <h1>{{ studentName }}</h1>
+
+  <section class="section-card">
+    <h2>Property Binding</h2>
+    <img [src]="imageUrl" width="200" />
+    <br /><br />
+    <button [disabled]="isDisabled">Submit (Disabled via Property Binding)</button>
+  </section>
+
+  <section class="section-card">
+    <h2>Class Binding</h2>
+    <p [class.passing]="isPassing" [class.failing]="!isPassing">
+      Student Result: {{ isPassing ? 'Passed' : 'Failed' }}
+    </p>
+  </section>
+
+  <section class="section-card">
+    <h2>Style Binding</h2>
+    <div
+      [style.background]="boxColor"
+      [style.width]="boxSize"
+      [style.height]="boxSize"
+      class="box"
+    ></div>
+  </section>
+</div>
